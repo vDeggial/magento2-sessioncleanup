@@ -69,7 +69,7 @@ class Cleanup
             $table = $this->tableSession;
             $sql = "OPTIMIZE TABLE $table;";
             $this->helperData->log("- Optimizing sessions table");
-            $result = $connection->query($sql);
+            $connection->query($sql);
             $this->helperData->log("- Sessions table optimized");
         } catch (\Exception $e) {
             $this->helperData->errorLog(__METHOD__, $e->getMessage());
