@@ -42,9 +42,8 @@ class Cleanup
                 } finally {
                     return $this;
                 }
-            }
+        }
     }
-
 
     private function deleteSessions()
     {

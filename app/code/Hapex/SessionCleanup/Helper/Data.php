@@ -2,8 +2,8 @@
 namespace Hapex\SessionCleanup\Helper;
 
 use Hapex\Core\Helper\DataHelper;
-use Magento\Framework\ObjectManagerInterface;
 use Magento\Framework\App\Helper\Context;
+use Magento\Framework\ObjectManagerInterface;
 
 class Data extends DataHelper
 {
