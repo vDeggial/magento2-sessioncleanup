@@ -1,4 +1,5 @@
 <?php
+
 namespace Hapex\SessionCleanup\Cron;
 
 use Hapex\SessionCleanup\Helper\Data as DataHelper;
@@ -7,13 +8,7 @@ use Psr\Log\LoggerInterface;
 
 class Cleanup
 {
-    /**
-     * @var ResourceConnection
-     */
     protected $resource;
-    /**
-     * @var LoggerInterface
-     */
     protected $logger;
 
     private $helperData;

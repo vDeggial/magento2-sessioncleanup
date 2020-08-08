@@ -1,4 +1,5 @@
 <?php
+
 namespace Hapex\SessionCleanup\Helper;
 
 use Hapex\Core\Helper\DataHelper;
