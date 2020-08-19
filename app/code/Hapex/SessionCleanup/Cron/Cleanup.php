@@ -1,24 +1,20 @@
 <?php
 
 namespace Hapex\SessionCleanup\Cron;
-
-use Hapex\SessionCleanup\Helper\Data as DataHelper;
+use Hapex\Core\Cron\BaseCron;
+use Hapex\Core\Helper\LogHelper;
 use Magento\Framework\App\ResourceConnection;
-use Psr\Log\LoggerInterface;
+use Hapex\SessionCleanup\Helper\Data as DataHelper;
 
-class Cleanup
+class Cleanup extends BaseCron
 {
     protected $resource;
-    protected $logger;
-
-    private $helperData;
     private $tableSession;
 
-    public function __construct(DataHelper $helperData, ResourceConnection $resource, LoggerInterface $logger)
+    public function __construct(DataHelper $helperData, LogHelper $helperLog, ResourceConnection $resource)
     {
-        $this->helperData = $helperData;
+        parent::__construct($helperData, $helperLog);
         $this->resource = $resource;
-        $this->logger = $logger;
         $this->tableSession = $this->resource->getTableName("session");
     }
 
