@@ -29,7 +29,7 @@ class Cleanup extends BaseCron
                     $this->helperData->log("Starting Session Cleanup");
                     $this->deleteSessions();
                     $this->helperData->log("Ending Session Cleanup");
-                } catch (\Exception $e) {
+                } catch (\Throwable $e) {
                     $this->helperData->errorLog(__METHOD__, $e->getMessage());
                 } finally {
                     return $this;
@@ -48,7 +48,7 @@ class Cleanup extends BaseCron
             $result = $this->connection->query($sql);
             $count = $result->rowCount();
             $this->helperData->log("- Cleaned $count expired sessions");
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             $this->helperData->errorLog(__METHOD__, $e->getMessage());
         }
     }
