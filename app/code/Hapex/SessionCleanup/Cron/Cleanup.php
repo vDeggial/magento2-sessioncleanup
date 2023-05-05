@@ -1,6 +1,7 @@
 <?php
 
 namespace Hapex\SessionCleanup\Cron;
+
 use Hapex\Core\Cron\BaseCron;
 use Hapex\Core\Helper\LogHelper;
 use Magento\Framework\App\ResourceConnection;
@@ -22,7 +23,7 @@ class Cleanup extends BaseCron
 
     public function cleanSessions()
     {
-        switch ($this->helperData->isEnabled()) {
+        switch (!$this->isMaintenance && $this->helperData->isEnabled()) {
             case true:
                 try {
                     $this->helperData->log("");
